@@ -62,10 +62,11 @@ Type CTECList<Type>::getFromIndex(int index)
 	{
 		if(i == index)
 		{
-			return current->value;
+			return current->getValue();
 		}
 		current = current->getNext();
 	}
+    return current->getValue();
 }
 
 template<class Type>
@@ -118,9 +119,8 @@ void CTECList<Type>::addAtIndex(int index, const Type& value)
 		if (spot == index - 1)
 		{
 			newNext = newNode;
+            newNext->setNext(currentSpot->getNext());
 			currentSpot->setNext(newNext);
-			newNext->setNext(nextSpot);
-
 		}
 
 		if (spot == index + 1)
@@ -140,10 +140,9 @@ void CTECList<Type>::addToEnd(const Type& value)
 
 	ArrayNode<Type> * newEnd = new ArrayNode<Type>(value);
 	ArrayNode<Type> * currentSpot = end;
-	ArrayNode<Type> * newNext = newEnd;
 
-	currentSpot->setNext(newNext);
-	newNext->setNext(nullptr);
+	currentSpot->setNext(newEnd);
+	newEnd->setNext(nullptr);
 }
 
 template<class Type>

@@ -118,3 +118,29 @@ CTECArray<Type>::~CTECArray()
 	delete head;
 }
 
+/*
+ 1. Check that the array exists
+ 2. Point to head
+ 3. iterate
+ 4. if not found return - 1
+ */
+template<class Type>
+int CTECArray<Type> :: indexOf(Type searchValue)
+{
+    assert(this->size > 0);
+    ArrayNode<Type> * current = head;
+    int indexNotFound = -1;
+    for(int index = 0; index < this->size; index++)
+    {
+        if(current->getValue() == searchValue)
+        {
+            return index;
+        }
+        else
+        {
+            current = current->getValue();
+        }
+    }
+    return indexNotFound;
+}
+

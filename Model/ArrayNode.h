@@ -13,7 +13,7 @@ template <class Type>
 class ArrayNode : public Node<Type>
 {
 private:
-	ArrayNode * next;
+	ArrayNode<Type> * next;
 public:
 	ArrayNode();
 	ArrayNode(const Type& value);
