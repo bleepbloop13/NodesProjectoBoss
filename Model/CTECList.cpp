@@ -217,6 +217,27 @@ Type CTECList<Type>::removeFromIndex(int index)
 }
 
 template<class Type>
+int CTECList<Type>::indexOf(Type searchValue)
+{
+    assert(this->size > 0);
+    ArrayNode<Type> * searchPointer;
+    
+    
+    int index = 0;
+    
+    for(searchPointer = head; searchPointer != nullptr; searchPointer = searchPointer->getNext())
+    {
+        if(searchValue == searchPointer->getValue())
+        {
+            return index;
+        }
+        index++;
+    }
+    
+    return index;
+}
+
+template<class Type>
 void CTECList<Type>::calculateSize()
 {
 	assert(size >= 0);
