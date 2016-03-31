@@ -17,6 +17,7 @@ private:
 	ArrayNode<Type> * head;
 	ArrayNode<Type> * end;
 	void calculateSize();
+    Type value;
 public:
 	CTECList();
 	virtual ~CTECList();

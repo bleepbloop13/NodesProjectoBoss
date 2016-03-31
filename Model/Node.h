@@ -11,7 +11,7 @@
 template <class Type>
 class Node {
 private:
-	Type value; //What is stored in the node.
+ //What is stored in the node.
 	Node * pointers; // Reference to the array of nodes this is connected to.
 public:
 	Node();
@@ -20,6 +20,7 @@ public:
 	Type getValue();
 	void setValue(const Type& value);
 	Node * getPointers();
+    Type value;
 };
 
 #endif /* MODEL_NODE_H_ */

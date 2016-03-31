@@ -21,7 +21,6 @@ public:
 	virtual ~ArrayNode();
 	ArrayNode * getNext();
 	void setNext(ArrayNode * next);
-	Type value;
 };
 
 #endif /* MODEL_ARRAYNODE_H_ */

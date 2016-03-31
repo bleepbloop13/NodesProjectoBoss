@@ -99,6 +99,7 @@ void CTECList<Type>::addToFront(const Type& value)
 
 	newFirst->setNext(current);
 	head = newFirst;
+    calculateSize();
 }
 
 template<class Type>
@@ -106,30 +107,31 @@ void CTECList<Type>::addAtIndex(int index, const Type& value)
 {
 	assert(size >= 0);
 	assert(index >= 0);
-	assert(index < size);
+	assert(index <= size);
 
 	ArrayNode<Type> * currentSpot = head;
-	ArrayNode<Type> * nextSpot;
-	ArrayNode<Type> * newNext;
+    ArrayNode<Type> * nextSpot = nullptr;
+    ArrayNode<Type> * newNext;
 	ArrayNode<Type> * newNode = new ArrayNode<Type>(value);
 
+    
+    
 	for (int spot = 0; spot < index + 1; index++)
 	{
 
 		if (spot == index - 1)
 		{
-			newNext = newNode;
-            newNext->setNext(currentSpot->getNext());
+            newNext = newNode;
+            nextSpot = currentSpot->getNext()->getNext();
 			currentSpot->setNext(newNext);
 		}
-
-		if (spot == index + 1)
-		{
-			nextSpot = currentSpot->getNext();
-		}
-
+        if(spot == index)
+        {
+            newNode->setNext(nextSpot);
+        }
 		currentSpot = currentSpot->getNext();
 	}
+    calculateSize();
 }
 
 template<class Type>
@@ -143,6 +145,7 @@ void CTECList<Type>::addToEnd(const Type& value)
 
 	currentSpot->setNext(newEnd);
 	newEnd->setNext(nullptr);
+    calculateSize();
 }
 
 template<class Type>
@@ -152,6 +155,7 @@ Type CTECList<Type>::removeFromFront()
 	ArrayNode<Type> * newHead = new ArrayNode<Type>();
 	newHead = this->head->getNext();
 	thingToRemove = this->head->getValue();
+    calculateSize();
 	return thingToRemove;
 }
 
@@ -184,7 +188,7 @@ Type CTECList<Type>::removeFromEnd()
 		delete end;
 		current = end;
 	}
-
+    calculateSize();
 	return returnValue;
 }
 
@@ -213,6 +217,7 @@ Type CTECList<Type>::removeFromIndex(int index)
 		current = current->getNext();
 	}
 	previousSpot->setNext(newNext);
+    calculateSize();
 	return thingToRemove;
 }
 
@@ -246,7 +251,7 @@ void CTECList<Type>::calculateSize()
 
 	if (head == nullptr)
 	{
-		size = 0;
+		this->size = 0;
 	}
 	else
 	{
@@ -257,5 +262,6 @@ void CTECList<Type>::calculateSize()
 			count++;
 			current = current->getNext();
 		}
+        this->size = count;
 	}
 }

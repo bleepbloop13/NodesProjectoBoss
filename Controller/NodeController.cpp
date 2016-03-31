@@ -24,8 +24,8 @@ NodeController::~NodeController()
 void NodeController::testLists()
 {
 	testList->addToFront(3);
+    testList->addAtIndex(1, 5);
 	testList->addToEnd(8);
-	testList->addAtIndex(1, 5);
 	cout << "End should be 8 and is: " << testList->getEnd() << endl;
 	cout << "Head should be 3 and is: " << testList->getFront() << endl;
 	cout << "Index 1 should be 5 and is: " << testList->getFromIndex(1) << endl;

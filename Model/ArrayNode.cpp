@@ -46,9 +46,9 @@ ArrayNode<Type>::ArrayNode(const Type& value, ArrayNode<Type> * next) : Node<Typ
  * Gets the pointer for next.
  */
 template <class Type>
-ArrayNode<Type>* ArrayNode<Type>::getNext()
+ArrayNode<Type> * ArrayNode<Type>::getNext()
 {
-	return this->next;
+    return this->next;
 }
 
 /**
