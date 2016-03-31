@@ -25,6 +25,11 @@ private:
 	Timer arrayTimer;
 	void testLists();
     
+    void swap(int first, int second);
+    void quicksort(int first, int last);
+    int partition(int first, int last);
+    void doQuick();
+    
     int * mergeData;
     void doMergesort();
     void mergesort(int data [], int size);
