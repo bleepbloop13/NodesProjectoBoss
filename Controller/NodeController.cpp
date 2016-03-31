@@ -66,6 +66,58 @@ void NodeController::doMergesort()
     delete [] mergeData;
 }
 
+void NodeController::mergesort(int data[], int size)
+{
+    int sizeOne;
+    int sizeTwo;
+    
+    if(size > 1)
+    {
+        sizeOne = size/2;
+        sizeTwo = size-sizeOne;
+        mergesort(data, sizeOne);
+        mergesort((data+sizeOne), sizeTwo);
+        
+        merge(data, sizeOne, sizeTwo);
+    }
+}
+
+void NodeController::merge(int data[],int sizeOne, int sizeTwo)
+{
+    int * temp;
+    int copied = 0;
+    int copied1 = 0;
+    int copied2 = 0;
+    int index;
+    
+    temp = new int[sizeOne + sizeTwo];
+    
+    while ((copied1 < sizeOne) && (copied2 < sizeTwo))
+    {
+        if(data[copied1] < (data + sizeOne) [copied2])
+        {
+            temp[copied++] = data[copied1++];
+        }
+        else
+        {
+            temp[copied++] = (data + sizeOne)[copied2++];
+        }
+    }
+    while(copied1 < sizeOne)
+    {
+        temp[copied++] = data[copied1++];
+    }
+    while(copied2 < sizeTwo)
+    {
+        temp[copied++] = (data + sizeOne)[copied2++];
+    }
+    for(index = 0; index < sizeOne + sizeTwo; index++)
+    {
+        data[index] = temp[index];
+    }
+    delete [] temp;
+}
+
 void NodeController::start()
 {
 	arrayTimer.startTimer();
