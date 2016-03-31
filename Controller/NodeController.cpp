@@ -62,6 +62,24 @@ void NodeController::swap(int first, int last)
     mergeData[last] = temp;
 }
 
+void NodeController::doQuick()
+{
+    mergeData = new int[1000000000];
+
+    for(int spot = 0; spot < 1000000000; spot++)
+    {
+        int myRandom = rand();
+        mergeData[spot] = myRandom;
+    }
+    
+    Timer mergeTimer;
+    mergeTimer.startTimer();
+    quicksort(0, 1000000000-1);
+    mergeTimer.stopTimer();
+    mergeTimer.displayTimerInformation();
+    delete [] mergeData;
+}
+
 void NodeController::testLists()
 {
 	testList->addToFront(3);
@@ -178,6 +196,7 @@ void NodeController::start()
 	arrayTimer.stopTimer();
 	arrayTimer.displayTimerInformation();
     
-    doMergesort();
+    //doMergesort();
+    doQuick();
 
 }
