@@ -237,8 +237,7 @@ Type CTECBinaryTree<Type> :: remove(const Type& value)
         }
         else
         {
-            remove(trailing->getRightChild();
+            remove(trailing->getRightChild());
         }
-        
     }
 }
