@@ -27,7 +27,8 @@
         CTECBinaryTree();
         ~CTECBinaryTree();
         bool insert(const Type& value);
-        Type remove (const Type& value);
+        void remove (const Type& value);
+        void remove(TreeNode<Type> * nodeToBeRemoved);
         bool contains (Type value);
         int getSize();
         int getHeight();

@@ -39,9 +39,9 @@ void CTECBinaryTree<Type> :: calculateSize(TreeNode<Type> * currentNode)
 }
 
 template<class Type>
-TreeNode<Type>* CTECBinaryTree<Type> :: getRoot()
+TreeNode<Type> * CTECBinaryTree<Type> :: getRoot()
 {
-    
+    return root;
 }
 
 template <class Type>
@@ -201,7 +201,7 @@ bool CTECBinaryTree<Type> :: contains(Type value, CTECBinaryTree<Type> * current
 }
 
 template<class Type>
-Type CTECBinaryTree<Type> :: remove(const Type& value)
+void CTECBinaryTree<Type> :: remove(const Type& value)
 {
     TreeNode<Type> * current;
     TreeNode<Type> * trailing;
@@ -239,5 +239,59 @@ Type CTECBinaryTree<Type> :: remove(const Type& value)
         {
             remove(trailing->getRightChild());
         }
+    }
+}
+
+template<class Type>
+void CTECBinaryTree<Type> :: remove(TreeNode<Type> * nodeToBeRemoved)
+{
+    TreeNode<Type> * current;
+    TreeNode<Type> * trailing;
+    TreeNode<Type> * temp;
+    
+    if(nodeToBeRemoved == nullptr)
+    {
+        cerr << "I'm afraid I can't let you do that." << endl;
+    }
+    else if(nodeToBeRemoved->getLeftChild() == nullptr && nodeToBeRemoved->getRightChild() == nullptr)
+    {
+        temp = nodeToBeRemoved;
+        nodeToBeRemoved = nullptr;
+        delete temp;
+    }
+    else if(nodeToBeRemoved->getLeftChild() == nullptr)
+    {
+        temp = nodeToBeRemoved;
+        nodeToBeRemoved = temp->getRightChild();
+        delete temp;
+    }
+    else if(nodeToBeRemoved->getRightChild() == nullptr)
+    {
+        temp = nodeToBeRemoved;
+        nodeToBeRemoved = temp->getLeftChild();
+        delete temp;
+    }
+    else
+    {
+        current = nodeToBeRemoved->getLeftChild();
+        trailing= nullptr;
+        
+        while(current->getRightChild != nullptr)
+        {
+            trailing = current;
+            current=current->getRightChild();
+        }
+        nodeToBeRemoved->setValue(current->getValue());
+        
+        if(trailing == nullptr)
+        {
+            nodeToBeRemoved->setLeftChild(current->getLeftChild());
+        }
+        else
+        {
+            trailing->setRightChild(current->getLeftChild());
+        }
+        
+        delete current;
     }
 }
