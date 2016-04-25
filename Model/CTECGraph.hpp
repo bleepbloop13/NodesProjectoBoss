@@ -30,7 +30,7 @@ namespace CTECData
         Type& operator [] (int vertex);
         Type operator [] (int vertex) const;
         int size();
-        bool isEdge(int source, int target);
+        bool isEdge(int source, int target) const;
         std::set<int> neighbors(int vertex) const;
     };
 }
