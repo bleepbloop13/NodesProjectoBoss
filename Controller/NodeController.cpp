@@ -177,6 +177,12 @@ void NodeController::merge(int data[],int sizeOne, int sizeTwo)
     delete [] temp;
 }
 
+void NodeController :: tryTree()
+{
+    CTECBinaryTree<int> firstTree;
+    firstTree.insert(72);
+}
+
 void NodeController::start()
 {
 	arrayTimer.startTimer();

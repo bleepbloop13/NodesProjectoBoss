@@ -14,6 +14,7 @@
 #include "../Model/CTECArray.cpp"
 #include "../Model/CTECList.cpp"
 #include "../Model/Timer.h"
+#include "../Model/CTECBinaryTree.cpp"
 #include <string>
 using namespace std;
 
@@ -34,6 +35,8 @@ private:
     void doMergesort();
     void mergesort(int data [], int size);
     void merge(int data [], int sizeOne, int sizeTwo);
+    
+    void tryTree();
 public:
 	NodeController();
 	virtual ~NodeController();

@@ -162,7 +162,7 @@ bool CTECBinaryTree<Type> :: insert(const Type& value)
             }
             if(trailNode->getValue() > value)
             {
-                trailNode-setLeftChild(new TreeNode<Type>(value, trailNode));
+                trailNode->setLeftChild(new TreeNode<Type>(value, trailNode));
             }
             else
             {
@@ -175,7 +175,7 @@ bool CTECBinaryTree<Type> :: insert(const Type& value)
 }
 
 template<class Type>
-bool CTECBinaryTree<Type> :: contains(Type value, CTECBinaryTree<Type> * currentTree)
+bool CTECBinaryTree<Type> :: contains(Type value, TreeNode<Type> * currentTree)
 {
     bool isInTree = false;
     

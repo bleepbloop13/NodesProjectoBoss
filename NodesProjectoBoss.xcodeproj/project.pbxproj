@@ -15,6 +15,7 @@
 		C3006AC11C99DBFD00676AD8 /* CTECStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3006AB61C99DBFD00676AD8 /* CTECStack.cpp */; };
 		C3006AC21C99DBFD00676AD8 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3006AB81C99DBFD00676AD8 /* Node.cpp */; };
 		C3006AC31C99DBFD00676AD8 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3006ABA1C99DBFD00676AD8 /* Timer.cpp */; };
+		C325C1DE1CCE8F930028440F /* CTECGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C325C1DC1CCE8F930028440F /* CTECGraph.cpp */; };
 		C3486BF71CBEBE9F009C6B62 /* CTECBinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3486BF51CBEBE9F009C6B62 /* CTECBinaryTree.cpp */; };
 		C3486BFA1CBEC086009C6B62 /* TreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3486BF81CBEC086009C6B62 /* TreeNode.cpp */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,8 @@
 		C3006AB91C99DBFD00676AD8 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		C3006ABA1C99DBFD00676AD8 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
 		C3006ABB1C99DBFD00676AD8 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		C325C1DC1CCE8F930028440F /* CTECGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTECGraph.cpp; sourceTree = "<group>"; };
+		C325C1DD1CCE8F930028440F /* CTECGraph.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CTECGraph.hpp; sourceTree = "<group>"; };
 		C3486BF51CBEBE9F009C6B62 /* CTECBinaryTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTECBinaryTree.cpp; sourceTree = "<group>"; };
 		C3486BF61CBEBE9F009C6B62 /* CTECBinaryTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CTECBinaryTree.hpp; sourceTree = "<group>"; };
 		C3486BF81CBEC086009C6B62 /* TreeNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TreeNode.cpp; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 				C3486BF61CBEBE9F009C6B62 /* CTECBinaryTree.hpp */,
 				C3486BF81CBEC086009C6B62 /* TreeNode.cpp */,
 				C3486BF91CBEC086009C6B62 /* TreeNode.hpp */,
+				C325C1DC1CCE8F930028440F /* CTECGraph.cpp */,
+				C325C1DD1CCE8F930028440F /* CTECGraph.hpp */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C325C1DE1CCE8F930028440F /* CTECGraph.cpp in Sources */,
 				C3006ABC1C99DBFD00676AD8 /* NodeController.cpp in Sources */,
 				C3006ABD1C99DBFD00676AD8 /* NodeRunner.cpp in Sources */,
 				C3006AC11C99DBFD00676AD8 /* CTECStack.cpp in Sources */,
