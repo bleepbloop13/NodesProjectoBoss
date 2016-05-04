@@ -20,10 +20,16 @@ CTECBinaryTree<Type> :: CTECBinaryTree()
 }
 
 template<class Type>
+CTECBinaryTree<Type> :: ~CTECBinaryTree()
+{
+    
+}
+
+template<class Type>
 int CTECBinaryTree<Type> :: getSize()
 {
     size = 0;
-    size = calculateSize(root);
+    calculateSize(root);
     return size;
 }
 
@@ -140,13 +146,14 @@ bool CTECBinaryTree<Type> :: insert(const Type& value)
     {
         TreeNode<Type> * currentNode = root;
         TreeNode<Type> * trailNode;
-        
         if(root == nullptr)
         {
             root = new TreeNode<Type>(value);
         }
         else
         {
+            
+        
             while(currentNode != nullptr)
             {
                 trailNode = currentNode;
@@ -162,11 +169,11 @@ bool CTECBinaryTree<Type> :: insert(const Type& value)
             }
             if(trailNode->getValue() > value)
             {
-                trailNode->setLeftChild(new TreeNode<Type>(value, trailNode));
+                currentNode->setLeftChild(new TreeNode<Type>(value, trailNode));
             }
             else
             {
-                TreeNode<Type> * insertedNode = new TreeNode<Type>(value, trailNode);
+                TreeNode<Type> * insertedNode = new TreeNode<Type>(value,trailNode);
                 trailNode->setRightChild(insertedNode);
             }
         }
@@ -181,19 +188,19 @@ bool CTECBinaryTree<Type> :: contains(Type value, TreeNode<Type> * currentTree)
     
     if(currentTree != nullptr)
     {
-        if(currentTree->getRoot()->getValue() == value)
+        if(currentTree->getValue() == value)
         {
             isInTree = true;
         }
         else
         {
-            if(value > currentTree->getRoot()->getValue())
+            if(value > currentTree->getValue())
             {
-                isInTree = contains(value, currentTree->getRoot()->getLeftChild());
+                isInTree = contains(value, currentTree->getLeftChild());
             }
-            if(value < currentTree->getRoot()->getValue())
+            else
             {
-                isInTree = contains(value, currentTree->getRoot()->getRightChild());
+                isInTree = contains(value, currentTree->getRightChild());
             }
         }
     }

@@ -181,6 +181,33 @@ void NodeController :: tryTree()
 {
     CTECBinaryTree<int> firstTree;
     firstTree.insert(72);
+    firstTree.insert(1325);
+}
+
+void NodeController:: tryGraphs()
+{
+    CTECGraph<int> testGraph;
+    //Add 7 vertices
+    testGraph.addVertex(2);
+    testGraph.addVertex(5);
+    testGraph.addVertex(6);
+    testGraph.addVertex(1);
+    testGraph.addVertex(3);
+    testGraph.addVertex(4);
+    testGraph.addVertex(7);
+    //Add enough edges including a loop
+    testGraph.addEdge(1,1);
+    testGraph.addEdge(1,2);
+    testGraph.addEdge(2,3);
+    testGraph.addEdge(3,4);
+    testGraph.addEdge(4,5);
+    testGraph.addEdge(5,6);
+    testGraph.addEdge(6,7);
+    testGraph.addEdge(7,3);
+    testGraph.addEdge(6,3);
+    //test both travrsals
+    testGraph.depthFirstTraversal(testGraph, 7);
+    testGraph.breadthFirstTraversal(testGraph, 7);
 }
 
 void NodeController::start()

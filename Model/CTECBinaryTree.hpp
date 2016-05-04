@@ -9,7 +9,7 @@
 #ifndef CTECBinaryTree_hpp
 #define CTECBinaryTree_hpp
 
-#include "TreeNode.hpp"
+#include "TreeNode.cpp"
 
     template <class Type>
     class CTECBinaryTree
@@ -25,7 +25,7 @@
         TreeNode<Type>* getLeftMostChild(TreeNode<Type> * rightSubTree);
     public:
         CTECBinaryTree();
-        ~CTECBinaryTree();
+        virtual ~CTECBinaryTree();
         bool insert(const Type& value);
         void remove (const Type& value);
         void remove(TreeNode<Type> * nodeToBeRemoved);

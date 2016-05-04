@@ -35,6 +35,12 @@ TreeNode<Type> :: TreeNode(const Type& value, TreeNode<Type> * parent) : Node<Ty
 }
 
 template<class Type>
+TreeNode<Type> * TreeNode<Type> ::getRoot()
+{
+    return this;
+}
+
+template<class Type>
 void TreeNode<Type> :: setLeftChild(TreeNode<Type> * leftChild)
 {
     this->leftChild = leftChild;
