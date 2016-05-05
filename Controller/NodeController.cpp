@@ -182,6 +182,18 @@ void NodeController :: tryTree()
     CTECBinaryTree<int> firstTree;
     firstTree.insert(72);
     firstTree.insert(1325);
+    firstTree.insert(6);
+    firstTree.insert(13);
+    firstTree.insert(1);
+    firstTree.insert(2);
+    firstTree.insert(5);
+    firstTree.insert(14);
+    firstTree.insert(19);
+    cout << "this is post insertion" << endl;
+    firstTree.inorderTraversal(firstTree.getRoot());
+    firstTree.remove(72);
+    cout << "this is post removal" << endl;
+    firstTree.inorderTraversal(firstTree.getRoot());
 }
 
 void NodeController:: tryGraphs()
@@ -230,6 +242,7 @@ void NodeController::start()
 	arrayTimer.displayTimerInformation();
     
     //doMergesort();
-    doQuick();
+    tryTree();
+   // tryGraphs();
 
 }

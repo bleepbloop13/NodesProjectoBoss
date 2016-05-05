@@ -222,7 +222,7 @@ void CTECBinaryTree<Type> :: remove(const Type& value)
         current= root;
         trailing = root;
         
-        while(current != nullptr && current->getvalue() != value)
+        while(current != nullptr && current->getValue() != value)
         {
             trailing = current;
             if(current->getValue() > value)
@@ -283,7 +283,7 @@ void CTECBinaryTree<Type> :: remove(TreeNode<Type> * nodeToBeRemoved)
         current = nodeToBeRemoved->getLeftChild();
         trailing= nullptr;
         
-        while(current->getRightChild != nullptr)
+        while(current->getRightChild() != nullptr)
         {
             trailing = current;
             current=current->getRightChild();
