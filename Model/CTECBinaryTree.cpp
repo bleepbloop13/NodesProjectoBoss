@@ -113,7 +113,7 @@ bool CTECBinaryTree<Type> :: contains(Type value)
 template<class Type>
 TreeNode<Type>* CTECBinaryTree<Type> :: getRightMostChild(TreeNode<Type> * leftSubTree)
 {
-    TreeNode<Type> * rightNode = leftSubTree;
+    TreeNode<Type> * rightNode = leftSubTree->getRoot();
     while(rightNode->getRightChild() != nullptr)
     {
         rightNode = rightNode->getRightChild();
@@ -125,7 +125,7 @@ TreeNode<Type>* CTECBinaryTree<Type> :: getRightMostChild(TreeNode<Type> * leftS
 template<class Type>
 TreeNode<Type>* CTECBinaryTree<Type> :: getLeftMostChild(TreeNode<Type> * rightSubTree)
 {
-    TreeNode<Type> leftNode = rightSubTree;
+    TreeNode<Type> leftNode = rightSubTree->getRoot();
     while(leftNode->getLeftChild() != nullptr)
     {
         leftNode = leftNode->getLeftChild();
@@ -158,13 +158,13 @@ bool CTECBinaryTree<Type> :: insert(const Type& value)
             {
                 trailNode = currentNode;
                 
-                if (currentNode->getValue() < value)
+                if (currentNode->getValue() > value)
                 {
-                    currentNode = currentNode->getRightChild();
+                    currentNode = currentNode->getLeftChild();
                 }
                 else
                 {
-                    currentNode = currentNode->getLeftChild();
+                    currentNode = currentNode->getRightChild();
                 }
             }
             if(trailNode->getValue() > value)

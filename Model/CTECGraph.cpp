@@ -19,7 +19,7 @@ const int CTECGraph<Type> :: MAXIMUM;
 template <class Type>
 CTECGraph<Type>:: CTECGraph()
 {
-    
+    manyVertices = 0;
 }
 
 template <class Type>

@@ -208,18 +208,18 @@ void NodeController:: tryGraphs()
     testGraph.addVertex(4);
     testGraph.addVertex(7);
     //Add enough edges including a loop
-    testGraph.addEdge(1,1);
+    testGraph.addEdge(0,0);
+    testGraph.addEdge(0,1);
     testGraph.addEdge(1,2);
     testGraph.addEdge(2,3);
     testGraph.addEdge(3,4);
     testGraph.addEdge(4,5);
     testGraph.addEdge(5,6);
-    testGraph.addEdge(6,7);
-    testGraph.addEdge(7,3);
-    testGraph.addEdge(6,3);
+    testGraph.addEdge(6,2);
+    testGraph.addEdge(5,2);
     //test both travrsals
-    testGraph.depthFirstTraversal(testGraph, 7);
-    testGraph.breadthFirstTraversal(testGraph, 7);
+    testGraph.depthFirstTraversal(testGraph, 6);
+    testGraph.breadthFirstTraversal(testGraph, 6);
 }
 
 void NodeController::start()
@@ -242,7 +242,7 @@ void NodeController::start()
 	arrayTimer.displayTimerInformation();
     
     //doMergesort();
-    tryTree();
-   // tryGraphs();
+    //tryTree();
+    tryGraphs();
 
 }

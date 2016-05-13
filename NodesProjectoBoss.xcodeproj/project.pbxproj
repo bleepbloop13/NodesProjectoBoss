@@ -19,6 +19,7 @@
 		C325C1DE1CCE8F930028440F /* CTECGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C325C1DC1CCE8F930028440F /* CTECGraph.cpp */; };
 		C3486BF71CBEBE9F009C6B62 /* CTECBinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3486BF51CBEBE9F009C6B62 /* CTECBinaryTree.cpp */; };
 		C3486BFA1CBEC086009C6B62 /* TreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3486BF81CBEC086009C6B62 /* TreeNode.cpp */; };
+		C3B2DB481CE10AD800FE8B58 /* HashNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3B2DB461CE10AD800FE8B58 /* HashNode.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +60,8 @@
 		C3486BF61CBEBE9F009C6B62 /* CTECBinaryTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CTECBinaryTree.hpp; sourceTree = "<group>"; };
 		C3486BF81CBEC086009C6B62 /* TreeNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TreeNode.cpp; sourceTree = "<group>"; };
 		C3486BF91CBEC086009C6B62 /* TreeNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TreeNode.hpp; sourceTree = "<group>"; };
+		C3B2DB461CE10AD800FE8B58 /* HashNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HashNode.cpp; sourceTree = "<group>"; };
+		C3B2DB471CE10AD800FE8B58 /* HashNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HashNode.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				C325C1DD1CCE8F930028440F /* CTECGraph.hpp */,
 				C32165141CDBC5CD000D84EF /* CTECHashTable.cpp */,
 				C32165151CDBC5CD000D84EF /* CTECHashTable.hpp */,
+				C3B2DB461CE10AD800FE8B58 /* HashNode.cpp */,
+				C3B2DB471CE10AD800FE8B58 /* HashNode.hpp */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				C3006ABE1C99DBFD00676AD8 /* ArrayNode.cpp in Sources */,
 				C32165161CDBC5CD000D84EF /* CTECHashTable.cpp in Sources */,
 				C3006AC01C99DBFD00676AD8 /* CTECList.cpp in Sources */,
+				C3B2DB481CE10AD800FE8B58 /* HashNode.cpp in Sources */,
 				C3006AC31C99DBFD00676AD8 /* Timer.cpp in Sources */,
 				C3486BF71CBEBE9F009C6B62 /* CTECBinaryTree.cpp in Sources */,
 				C3486BFA1CBEC086009C6B62 /* TreeNode.cpp in Sources */,
