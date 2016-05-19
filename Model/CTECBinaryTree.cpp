@@ -169,7 +169,7 @@ bool CTECBinaryTree<Type> :: insert(const Type& value)
             }
             if(trailNode->getValue() > value)
             {
-                currentNode->setLeftChild(new TreeNode<Type>(value, trailNode));
+                trailNode->setLeftChild(new TreeNode<Type>(value, trailNode));
             }
             else
             {

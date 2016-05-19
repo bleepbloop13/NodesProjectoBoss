@@ -194,6 +194,12 @@ void NodeController :: tryTree()
     firstTree.remove(72);
     cout << "this is post removal" << endl;
     firstTree.inorderTraversal(firstTree.getRoot());
+    firstTree.insert(84);
+    cout << "this is post second insertion" << endl;
+    firstTree.postorderTraversal(firstTree.getRoot());
+    firstTree.remove(2);
+    cout << "this is post second removal" << endl;
+    firstTree.preorderTraversal(firstTree.getRoot());
 }
 
 void NodeController:: tryGraphs()
@@ -207,6 +213,9 @@ void NodeController:: tryGraphs()
     testGraph.addVertex(3);
     testGraph.addVertex(4);
     testGraph.addVertex(7);
+    testGraph.addVertex(9);
+    testGraph.addVertex(12);
+    testGraph.addVertex(19);
     //Add enough edges including a loop
     testGraph.addEdge(0,0);
     testGraph.addEdge(0,1);
@@ -215,34 +224,35 @@ void NodeController:: tryGraphs()
     testGraph.addEdge(3,4);
     testGraph.addEdge(4,5);
     testGraph.addEdge(5,6);
+    testGraph.addEdge(6,7);
+    testGraph.addEdge(7,8);
+    testGraph.addEdge(8,9);
     testGraph.addEdge(6,2);
     testGraph.addEdge(5,2);
     //test both travrsals
-    testGraph.depthFirstTraversal(testGraph, 6);
-    testGraph.breadthFirstTraversal(testGraph, 6);
+    testGraph.depthFirstTraversal(testGraph, 0);
+    testGraph.breadthFirstTraversal(testGraph, 0);
 }
 
 void NodeController::start()
 {
 	arrayTimer.startTimer();
 
-	for(int index = 0; index < notHipsterWorld->getSize(); index++)
-	{
-		notHipsterWorld->set(index, (index * 13));
-	}
+	//for(int index = 0; index < notHipsterWorld->getSize(); index++)
+	//{
+	//	notHipsterWorld->set(index, (index * 13));
+	//}
 
-	for(int index = notHipsterWorld->getSize()-1; index >= 0; index--)
-	{
-		cout << "The contents of the notHipsterWorld array node " << index << " are: " << notHipsterWorld->get(index) << endl;
-	}
+	//for(int index = notHipsterWorld->getSize()-1; index >= 0; index--)
+	//{
+	//	cout << "The contents of the notHipsterWorld array node " << index << " are: " << notHipsterWorld->get(index) << endl;
+	//}
 
 	//testLists();
-    
-	arrayTimer.stopTimer();
-	arrayTimer.displayTimerInformation();
-    
     //doMergesort();
     //tryTree();
     tryGraphs();
-
+    
+    arrayTimer.stopTimer();
+    arrayTimer.displayTimerInformation();
 }
