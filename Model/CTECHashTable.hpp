@@ -38,7 +38,7 @@ namespace CTECData
     public:
         CTECHashTable();
         ~CTECHashTable();
-        
+        void addChained(HashNode<Type> currentNode);
         void add(HashNode<Type> currentNode);
         bool remove(HashNode<Type> currentNode);
         bool contains(HashNode<Type> currentNode);

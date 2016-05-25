@@ -49,7 +49,7 @@ void CTECHashTable<Type> :: add(HashNode<Type> currentNode)
             updateCapacity();
         }
         int insertionIndex = findPosition(currentNode);
-        
+        HashNode<Type> * tempPointer = internalStorage[insertionIndex];
         if(internalStorage[insertionIndex] != nullptr)
         {
             insertionIndex = handleCollision(currentNode);
@@ -61,6 +61,7 @@ void CTECHashTable<Type> :: add(HashNode<Type> currentNode)
         }
         
         internalStorage[insertionIndex] = &currentNode;
+        cout << internalStorage[insertionIndex] << endl;
         size++;
     }
 }
@@ -161,7 +162,83 @@ bool CTECHashTable<Type> :: contains(HashNode<Type> currentNode)
 }
 
 template <class Type>
+bool CTECHashTable<Type> :: remove(HashNode<Type> currentNode)
+{
+    bool hasBeenRemoved = false;
+    if(contains(currentNode))
+    {
+        int possibleLocation = findPos(currentNode);
+        
+        while(internalStorage[possibleLocation] != nullptr && !hasBeenRemoved)
+        {
+            if(internalStorage[possibleLocation]->getValue() == currentNode.getValue())
+            {
+                hasBeenRemoved = true;
+                internalStorage[possibleLocation] = nullptr;
+            }
+            possibleLocation = (possibleLocation + 1 ) % capacity;
+        }
+    }
+}
+
+template <class Type>
 int CTECHashTable<Type> :: handleCollision(HashNode<Type> currentNode)
 {
-    int updatedPosition;
+    int updatedPosition = findPosition(currentNode);
+    
+    updatedPosition = ( 47 + (updatedPosition * updatedPosition)) % capacity;
+    
+    return updatedPosition;
+}
+
+template <class Type>
+void CTECHashTable<Type> :: addChained(HashNode<Type> currentNode)
+{
+    if((chainedSize/chainedCapacity) >= efficiencyPercentage())
+    {
+        updateChainCapacity();
+    }
+    int insertionIndex = findPosition(currentNode);
+    if(chainedStorage[insertionIndex] != nullptr)
+    {
+        CTECList<HashNode<Type>> temp = chainedStorage[insertionIndex];
+        temp.addEnd(currentNode);
+    }
+    else
+    {
+        CTECList<HashNode<Type>> tempList;
+        tempList.addEnd(currentNode);
+        chainedStorage[insertionIndex] = tempList;
+    }
+    chainedSize++;
+}
+
+template <class Type>
+void CTECHashTable<Type> :: updateChainCapacity()
+{
+    int updatedChainedCapacity = getNextPrime();
+    int oldChainedCapacity = capacity;
+    chainedCapacity = updatedChainedCapacity;
+    CTECList<HashNode<Type>> * largestChainedStorage = new CTECList<HashNode<Type>>[updatedChainedCapacity];
+    for(int index = 0; index < oldChainedCapacity; index++)
+    {
+        if(chainedStorage[index] != nullptr)
+        {
+            CTECList<HashNode<Type>> temp = chainedStorage[index];
+            for(int innerIndex = 0; innerIndex < temp.GetSize(); innerIndex++)
+            {
+                int updatedChainedPosition = findPosition(temp.getFromIndex(innerIndex));
+                if(largestChainedStorage[updatedChainedPosition] == nullptr)
+                {
+                    CTECList<HashNode<Type>> insertList;
+                    insertList.addEnd(temp.getFromIndex(innerIndex));
+                    largestChainedStorage[updatedChainedPosition] = insertList;
+                }
+                else
+                {
+                    largestChainedStorage[updatedChainedPosition].addEnd(temp.getFromIndex(innerIndex));
+                }
+            }
+        }
+    }
 }

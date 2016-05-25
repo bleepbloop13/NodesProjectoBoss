@@ -234,6 +234,8 @@ void NodeController:: tryGraphs()
     testGraph.breadthFirstTraversal(testGraph, 0);
 }
 
+
+
 void NodeController::start()
 {
 	arrayTimer.startTimer();

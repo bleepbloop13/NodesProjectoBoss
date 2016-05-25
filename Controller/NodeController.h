@@ -16,6 +16,7 @@
 #include "../Model/Timer.h"
 #include "../Model/CTECBinaryTree.cpp"
 #include "../Model/CTECGraph.cpp"
+#include "../Model/CTECHashTable.cpp"
 #include <string>
 using namespace std;
 
@@ -38,6 +39,7 @@ private:
     void merge(int data [], int sizeOne, int sizeTwo);
     
     void tryTree();
+    void tryHashTables();
     
     void tryGraphs();
 public:
