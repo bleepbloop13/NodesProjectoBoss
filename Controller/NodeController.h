@@ -12,7 +12,7 @@
 #include "../Model/ArrayNode.cpp"
 #include "../Model/ArrayNode.h"
 #include "../Model/CTECArray.cpp"
-#include "../Model/CTECList.cpp"
+#include "../Model/CTECList.h"
 #include "../Model/Timer.h"
 #include "../Model/CTECBinaryTree.cpp"
 #include "../Model/CTECGraph.cpp"

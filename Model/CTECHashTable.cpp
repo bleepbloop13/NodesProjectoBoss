@@ -50,7 +50,7 @@ void CTECHashTable<Type> :: add(HashNode<Type> currentNode)
         }
         int insertionIndex = findPosition(currentNode);
         HashNode<Type> * tempPointer = internalStorage[insertionIndex];
-        if(internalStorage[insertionIndex] != nullptr)
+        if(tempPointer != nullptr)
         {
             insertionIndex = handleCollision(currentNode);
             

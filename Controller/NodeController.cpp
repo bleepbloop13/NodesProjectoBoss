@@ -234,7 +234,33 @@ void NodeController:: tryGraphs()
     testGraph.breadthFirstTraversal(testGraph, 0);
 }
 
+void NodeController :: tryHashTables()
+{
+    CTECHashTable<int> testTable;
+    HashNode<int> tempArray[10];
+    for(int spot = 0; spot < 10; spot++)
+    {
+        int key = spot;
+        int value = spot + 1;
+        HashNode<int> * temp = new HashNode<int>(key, value);
+        testTable.add(*temp);
+        tempArray[spot] = *temp;
+        
+    }
+    
+    bool test = testTable.contains(tempArray[1]);
+    string result;
+    if(test)
+    {
+        result = "yes";
+    }
+    else
+    {
+        result = "no";
+    }
 
+    cout << result << endl;
+}
 
 void NodeController::start()
 {
@@ -253,7 +279,8 @@ void NodeController::start()
 	//testLists();
     //doMergesort();
     //tryTree();
-    tryGraphs();
+    //tryGraphs();
+    tryHashTables();
     
     arrayTimer.stopTimer();
     arrayTimer.displayTimerInformation();
